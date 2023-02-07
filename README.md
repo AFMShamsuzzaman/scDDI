@@ -60,5 +60,7 @@ write.csv(sim_goolam,"/home/zaman/sim_goolam.csv",row.names = FALSE)
 Run the the following ipynb file
 
 imputation_goolam.ipynb
+
 clustering_goolam.ipynb
+
 original_goolam.ipynb
