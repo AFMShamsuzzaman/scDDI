@@ -57,7 +57,7 @@ write.csv(sim_goolam,"/home/zaman/sim_goolam.csv",row.names = FALSE)
 
 **Import the above csv files into Jupyter Notebook**
 
-Run the the following ipynb file
+Run the the following ipynb file :
 
 imputation_goolam.ipynb
 
