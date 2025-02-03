@@ -68,10 +68,10 @@ Now, Run the following python code to impute the given dataset as follows:
 Then, to validate the results, we utilized clustering performance metrics, specifically the Adjusted Rand Index (ARI). We compared the ARI value for both unimputed dataset and as well as imputed dataset using scDDI.
 
 
-    clustering_imputed.ipynb
-    clustering_unimputed.ipynb
+    jupyter notebook clustering_imputed.ipynb
+    jupyter notebook clustering_unimputed.ipynb
 
 
 Now,we visualized the clustering outcomes and analyzed the clusters to identify marker genes.
 
-    marker_gene.ipynb
+    jupyter notebook marker_gene.ipynb
