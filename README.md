@@ -1,15 +1,20 @@
 # scDDI
+
 Single Cell Drop-out Detection and Imputation
 
 ##Pre-requisites
 
 > R version  4.0.0 or higher
+
 > Python 3.7
 
 ## Install
 library("devtools")
+
 install_github("AFMShamsuzzaman/scDDI")
+
 Check the installation:
+
 library(scDDI)
 
 ## Load required packages
@@ -17,10 +22,10 @@ library(scDDI)
 R packages
 
     library(SingleCellExperiment)
-     library(Linnorm)
-     library(foreach)
-     library(doParallel)
-     library(scDoc)
+    library(Linnorm)
+    library(foreach)
+    library(doParallel)
+    library(scDoc)
 
 Python Packages: 
  
