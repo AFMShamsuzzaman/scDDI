@@ -9,13 +9,13 @@ Single Cell Drop-out Detection and Imputation
 > Python 3.7
 
 ## Install
-library("devtools")
+    library("devtools")
 
-install_github("AFMShamsuzzaman/scDDI")
+    install_github("AFMShamsuzzaman/scDDI")
 
 Check the installation:
 
-library(scDDI)
+    library(scDDI)
 
 ## Load required packages
 
