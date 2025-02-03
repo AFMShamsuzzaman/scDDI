@@ -54,7 +54,7 @@ Then, save the processed dataset, dropout probability matrix and cell-to-cell si
     write.csv(dp_darmanis,"/home/zaman/New2/dp_darmanis.csv",row.names = FALSE)
     write.csv(sim_darmanis,"/home/zaman/New2/sim_darmanis.csv",row.names = FALSE)
 
-You can also simply run the Rscript file as follows:
+Or you can also simply run the Rscript file as follows:
 
     Rscript Imputation.R
     
