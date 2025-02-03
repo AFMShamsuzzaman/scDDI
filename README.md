@@ -10,7 +10,6 @@ Single Cell Drop-out Detection and Imputation
 
 ## Install
     library("devtools")
-
     install_github("AFMShamsuzzaman/scDDI")
 
 Check the installation:
