@@ -52,7 +52,7 @@ Then, save the processed darmanis dataset, dropout probability matrix and cell-t
     
 ## Usage of the Python functions 
 
-Now, Run the following python code to impute the dataset darmanis_process
+Now, Run the following python code to impute the given dataset
 
     python3 imputation_darmanis.py
 
