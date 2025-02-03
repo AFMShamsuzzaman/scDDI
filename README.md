@@ -21,9 +21,12 @@ library(scDDI)
 
 R packages
 
-     library(scDoc)
+    library(SingleCellExperiment)
+     library(Linnorm)
      library(foreach)
      library(doParallel)
+     library(scDoc)
+
 
 Python Packages: 
  
@@ -33,36 +36,23 @@ Python Packages:
 
 ## Usage of the R functions
 
-import the datatset
-goolam_process <- read.csv("~/Data/yan_process.csv", header=FALSE)
+Preprocess raw data using DataProcessing.R function
 
-**Run the following code in Rstudio**
-offsets_goolam <- as.numeric(log(colSums(goolam_process)))
+    Biase_data<- readRDS("Data/darmanis.rds")
+    data <- assay(Biase_data) 
+    annotation <- Biase_data[[1]] #already factor type class
+    colnames(data) <- annotation
+    darmanis_process = normalized_data(data)
 
-count_goolam <- goolam_process[rowSums(goolam_process > 5) > 4, ]
+Now, calculate dropout probabilty matrix and cell-to-cell similarity matrix as follows :
 
-dp_goolam <- prob.dropout(input = count_goolam, offsets = offsets_goolam, mcore = 3)
+     offsets_darmanis <- as.numeric(log(colSums(darmanis_process)))
+     dp_darmanis <- prob.dropout(input = darmanis_process, offsets = offsets_darmanis, mcore = 6)  ## dp_darmanis is the dropout probability matrix
+     sim_darmanis <- sim.calc(log2(count_darmanis+1), dp_darmanis)                       ## sim_darmanis is the cell-to-cell similarity matrix
 
-dp_goolam[is.na(dp_goolam)] <- 0
-
-sim_goolam <- sim.calc(log2(count_goolam+1), dp_goolam)
-
-**Save the output into csv file**
-
-write.csv(count_goolam,"/home/zaman/count_goolam.csv",row.names = FALSE)
-
-write.csv(dp_goolam,"/home/zaman/dp_goolam.csv",row.names = FALSE)
-
-write.csv(sim_goolam,"/home/zaman/sim_goolam.csv",row.names = FALSE)
-
-**Import the above csv files into Jupyter Notebook**
-
-Run the the following ipynb file :
-
-imputation_goolam.ipynb
-
-clustering_goolam.ipynb
-
-original_goolam.ipynb
-
-goolam_marker.ipynb
+Then, save the dropout probability matrix and cell-to-cell similarity matrix into csv file fromat. 
+Now, Run the the following ipynb file :
+imputation_darmanis.ipynb
+clustering_darmanis.ipynb
+original_darmanis.ipynb
+darmanis_marker.ipynb
