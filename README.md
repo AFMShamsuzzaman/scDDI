@@ -46,7 +46,7 @@ Now, calculate dropout probabilty matrix and cell-to-cell similarity matrix as f
 
      offsets_darmanis <- as.numeric(log(colSums(darmanis_process)))
      dp_darmanis <- prob.dropout(input = darmanis_process, offsets = offsets_darmanis, mcore = 6)  ## dp_darmanis is the dropout probability matrix
-     sim_darmanis <- sim.calc(log2(count_darmanis+1), dp_darmanis)                       ## sim_darmanis is the cell-to-cell similarity matrix
+     sim_darmanis <- sim.calc(log2(count_darmanis+1), dp_darmanis)   ## sim_darmanis is the cell-to-cell similarity matrix
 
 Then, save the processed dataset, dropout probability matrix and cell-to-cell similarity matrix into csv file fromat. 
 
