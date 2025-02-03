@@ -64,6 +64,6 @@ Then, to validate the results, we utilized clustering performance metrics, speci
     clustering_unimputed.ipynb
 
 
-Now,We visualized the clustering outcomes and analyzed the clusters to identify marker genes.
+Now,we visualized the clustering outcomes and analyzed the clusters to identify marker genes.
 
-    darmanis_marker.ipynb
+    marker_gene.ipynb
