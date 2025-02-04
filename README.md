@@ -75,3 +75,6 @@ Then, to validate the results, we utilized clustering performance metrics, speci
 Now,we visualized the clustering outcomes and analyzed the clusters to identify marker genes.
 
     jupyter notebook marker_gene.ipynb
+    
+# A dry run on Darmanis data 
+[A demo run of scDDI for Darmanis data](https://github.com/AFMShamsuzzaman/Introduction-to-scDDI/)
