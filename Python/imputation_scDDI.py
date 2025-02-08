@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import itertools
 
-data=pd.read_csv('~/data/darmanis_process.csv')
-dp= pd.read_csv('~/data/dp_darmanis.csv')
-sim= pd.read_csv('~/data/sim_darmanis.csv')
+data=pd.read_csv('~/data/darmanis_process.csv')  #Original count matrix
+dp= pd.read_csv('~/data/dp_darmanis.csv')       # Dropout probability matrix
+sim= pd.read_csv('~/data/sim_darmanis.csv')     # Cell-to-cell similarity matrix
 data=data.values
 data_imputed=data
 dp=dp.values
@@ -71,11 +71,23 @@ for i, j in itertools.product(range(0,nrow), range(0,ncol)):
     else:
         imp[i][j]=np.nan
 
+# Save imputed data
+pd.DataFrame(data_imputed).to_csv("/home/zaman/New2/darmanis_imputed_new.csv", index=False, header=False)
 
-import csv
+# Visualization of Decision Tree Structure
+plt.figure(figsize=(15, 8))
+plot_tree(regressor, filled=True, feature_names=["Cell Index"], rounded=True)
+plt.title("Decision Tree Structure for Gene Expression Imputation")
+plt.show()
 
-with open("~/data/darmanis_imputed.csv", "w", newline="") as f:
-    writer = csv.writer(f)
-    writer.writerows(data_imputed)
-
+# Scatter plot for Real vs Imputed values
+plt.figure(figsize=(8, 5))
+plt.scatter(X_test[:-1], y_test[:-1], color='red', label="Real Values")
+plt.scatter(X_test[:-1], y_pred[:-1], color='blue', marker='x', label="Imputed Values")
+plt.plot(np.sort(X_test[:-1], axis=0), regressor.predict(np.sort(X_test[:-1], axis=0)), color='green', linestyle="dashed", label="Regression Fit")
+plt.xlabel("Cell Index")
+plt.ylabel("Gene Expression Value")
+plt.title("Decision Tree Regression for Gene Expression Imputation")
+plt.legend()
+plt.show()
 
