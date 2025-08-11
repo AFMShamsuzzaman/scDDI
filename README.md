@@ -65,11 +65,14 @@ Now, Run the following python code to impute the given dataset as follows:
     python3 imputation_scDDI.py
 
     
-Then, to validate the results, we utilized clustering performance metrics, specifically the Adjusted Rand Index (ARI). We compared the ARI value for both unimputed dataset and as well as imputed dataset using scDDI.
+Then, to validate the results, we utilized clustering performance metrics, such as Adjusted Rand Index (ARI) and Normalized Mutual Information(NMI). We compared the ARI and NMI value for both unimputed dataset and as well as imputed dataset using scDDI and eight other state-of-art methods
 
 
-    jupyter notebook clustering_imputed.ipynb
-    jupyter notebook clustering_unimputed.ipynb
+    jupyter notebook clustering_evaluation.ipynb
+
+Now,we performed expression-level recovery evaluation, including Pearson and Spearman correlation analyses on simulated datasets with known ground truth, and RMSE and MAE metrics on real datasets with artificial masking.
+
+    jupyter notebook expression_recovey.ipynb
 
 
 Now,we visualized the clustering outcomes and analyzed the clusters to identify marker genes.
